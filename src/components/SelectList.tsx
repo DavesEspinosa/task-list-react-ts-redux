@@ -1,9 +1,9 @@
 import React, { FC, FormEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { List } from "./../store/types";
+import { List } from "../store/types";
 import { setSelectedList } from "../store/actions";
-import { RootState } from "./../store/store";
+import { RootState } from "../store/store";
 
 const SelectList: FC = () => {
   const dispatch = useDispatch();

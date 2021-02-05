@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { Task, List } from '../store/types';
 import { unsetTaskToDelete, deleteTask, setNotification } from '../store/actions';
 
+//!This component is used to delete the task. When delete button is clicked deleteTask action is dispatched, we need to pass task and list as arguments and we can get those from the component props(we set them to taskToDelete property when we clicked delete button), and the task is removed from the list and updated list saved to local storage. setNotification action is also dispatched when delete button is clicked.And to hide the modal we need to dispatch unsetTaskToDelete action which will set taskToDelete to null.
+
 interface DeleteTaskModalProps {
   taskToDelete: {
     task: Task;

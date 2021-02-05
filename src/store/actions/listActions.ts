@@ -1,5 +1,7 @@
 import { List, ListsAction, ADD_LIST, GET_LISTS, GET_LIST_BY_ID, SET_LISTID_TO_DELETE, SET_LIST_TO_EDIT, SET_SELECTED_LIST, DELETE_LIST, UPDATE_LIST, Task, ADD_TASK, SET_TASK_TO_DELETE, UNSET_TASK_TO_DELETE, DELETE_TASK, SET_TASK_TO_EDIT, UNSET_TASK_TO_EDIT, UPDATE_TASK } from "./../types";
 
+//!First we need to import our interfaces, union type for list actions and store types. Then we can can create action we’ll dispatch in our components. Many actions returns type and payload, some just type. And all of them will return ListsAction and since we used typeof and then the type typescript will know which type to use for the action. For example, in addList action we are using ListsAction as return type but since we are using ADD_LIST as a type typescript will know that we want to use AddListAction.
+
 export const addList = (list: List): ListsAction => {
   return {
     type: ADD_LIST,

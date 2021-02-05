@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './../store/store';
 import { getListById, deleteList, setNotification, setListIdToDelete } from '../store/actions';
 
+//!DeleteListModal component will delete a list when the delete button is clicked or close the modal when cancel button or modal background are clicked. If the list has tasks they will be shown as well in this component just to alert the user that they will be deleted when list is deleted. When the component is mounted we will use useEffect hook to get the list by the id we passed as a property. When delete button is clicked we will dispatch deleteList action and setNotification action with the type set to danger. And when cancel button or modal background are clicked we will dispatch setListIdToDelete action to set the listIdToDelete from list state to empty string to close the modal.
+
 interface DeleteListModalProps {
   listId: string;
 }

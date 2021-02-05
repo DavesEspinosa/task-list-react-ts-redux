@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { Task, List } from '../store/types';
 import { updateTask, unsetTaskToEdit, setNotification } from '../store/actions';
 
+//!When this modal is opened you can edit the task. You can change the task name and complete or uncomplete the task. When the form is submitted updateTask action is dispatched with 4 parameters, task id, task name, task state(completed/uncompleted) and the list this task belongs to. setNotification action will also be dispatched. If you want to close the modal you just need to dispatch unsetTaskToEdit action because when this is set to null modal is closed.
+
+
 interface EditTaskModalProps {
   taskToEdit: {
     task: Task;

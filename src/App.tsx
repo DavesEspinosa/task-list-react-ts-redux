@@ -11,6 +11,8 @@ import Notification from "./components/Notification";
 import SideBar from "./components/SideBar";
 import { RootState } from "./store/store";
 
+//!If you add new list this list should be saved to local storage, added to Your lists section and to select field as an option. You will also see a notification when the list is added. And if you click on this list edit list modal will open and there you can update the list name. And if you click remove button next to list name delete list modal will open and in here you can click delete button to delete the list and remove it from local storage.
+
 const App: FC = () => {
   const notificationMsg = useSelector(
     (state: RootState) => state.notification.message

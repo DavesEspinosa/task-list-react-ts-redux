@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { List } from "./../store/types";
 import { setListToEdit, updateList, setNotification } from "../store/actions";
 
+//!This component will be used to update/edit the list name.Since it will have a list property we can create interface for props with list property of type List. With the help of list property we can use useState hook and set the default value for the list name and we can use it in our input field and when the modal opens list name will be added to the input field. When the form is submitted we can do some validation and if validation passes we can dispatch updateList and setNotification actions. And when we want to close the modal we can just dispatch the setListToEdit action with empty string because in App.tsx file we will check if listToEdit is set and only in this case we will show the modal and if it is empty modal will close.
 interface EditListModalProps {
   list: List;
 }

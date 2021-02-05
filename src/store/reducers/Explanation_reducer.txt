@@ -1,0 +1,65 @@
+First we need to import some interfaces and types. Then we can create our initialState which will have all properties we defined in our ListState interface. And then our state in reducer can be equal to this initialState object and the action can use ListsAction type and the reducer will always return ListState.
+
+I created 2 helper functions in this file, getListsFromLS which will return lists from local storage or empty object and saveListsToLS which will save lists to local storage.
+
+Now let’s add some cases for each type:
+
+ADD_LIST
+
+will add a list we passed to addList action as an argument to the lists property and save it to the local storage. I will always clone/copy original value because I don’t want to change the original value but cloned value.
+
+GET_LISTS
+
+will get lists from local storage and update the lists property in list state
+
+GET_LIST_BY_ID
+
+will get the list by id that we passed in our action as a parameter
+
+SET_LISTID_TO_DELETE
+
+will set the listIdToDelete to the list id we passed as parameter
+
+SET_LIST_TO_EDIT
+
+will get the list from local storage by the id we passed as parameter in our action and will set that list to listToEdit property
+
+DELETE_LIST
+
+will delete the list from local storage, update the lists property, set listIdToDelete to empty string, set listById to null and it will change selectedList to null if the list we deleted was selected in select field
+
+UPDATE_LIST
+
+will update the list and save updated lists to local storage, and will also set listToEdit to null
+
+SET_SELECTED_LIST
+
+will update selectedList when select field value is changed
+
+ADD_TASK
+
+will add new task to selected list
+
+SET_TASK_TO_DELETE
+
+will set the taskToDelete task property to the task we want to delete and list property to selected list
+
+UNSET_TASK_TO_DELETE
+
+will set taskToDelete to null
+
+DELETE_TASK
+
+will delete selected task from the selected list and update the lists in local storage
+
+SET_TASK_TO_EDIT
+
+will set the taskToEdit task property to the task we want to edit and list property to selected list
+
+UNSET_TASK_TO_EDIT
+
+will set taskToEdit to null
+
+UPDATE_TASK
+
+will update selected task in selected list and update the lists in local storage
